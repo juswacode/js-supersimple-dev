@@ -1,0 +1,10 @@
+.button {
+  background-color: yellow;
+}
+.button-add {
+  background-color: yellowgreen;
+}
+.button-reset {
+  background-color: red;
+  color: white;
+}

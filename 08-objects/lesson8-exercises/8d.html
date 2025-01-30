@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8d</title>
+</head>
+<body>
+  <script>
+
+    //create a function that takes 2 parameters and return the name property value of the lowest price. 
+
+    function comparePrice(product1, product2) {
+    
+      if (product1.price > product2.price) {
+        return product2.name;
+      } else if (product1.price < product2.price) {
+        return product1.name;
+      } else ('Products same price!');
+    }
+  
+    const ball1 = {
+      name: 'basketball',
+      price: 2095 
+    };
+    const ball2 = {
+      name: 'volleyball',
+      price: 3000
+    }
+
+    console.log(comparePrice(ball1, ball2));
+    </script>
+</body>
+</html>

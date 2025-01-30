@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  
+  <script>
+    /*
+    let products = {
+      name: 'Palmolive',
+      price: 6
+    }
+    console.log(products);
+    console.log(products.name);
+    console.log(products.size);
+    products.name = 'head & shoulders';
+    console.log(products.name);
+    products.size = '15 ml';
+    console.log(products);
+    */
+   let products = {
+    name: 'shirt',
+    price: 10,
+    class: 'A'
+   }
+   console.log(products['name']);
+   console.log(products);
+
+   //will convert a js object into a json. Please keep in mind that json is strings.
+   let jsonProducts =JSON.stringify(products);
+   console.log(jsonProducts);
+   console.log(typeof jsonProducts);
+
+  //  to convert json back into objects
+  let jsonToString = JSON.parse(jsonProducts);
+  console.log(jsonToString);
+  console.log(typeof jsonToString);
+
+   
+  
+  </script>
+
+</body>
+</html>

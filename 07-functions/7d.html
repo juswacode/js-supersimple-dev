@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Far to Cel | Vice versa</title>
+</head>
+<body>
+  <script>
+    // farenheit to celcius
+    function convertToFahrenheit(celcius) {
+      let fahrenheit = (celcius * 9 /5) + 32;
+      console.log(fahrenheit);
+    }
+    convertToFahrenheit(25);
+
+    // celcius to fahrenheit
+    function convertToCelcius(fahrenheit) {
+      let celcius = (fahrenheit -32) * 5/ 9;
+      console.log(celcius);
+    }
+    convertToCelcius(86);
+
+    function converTemperature(degree, unit) {
+      if (unit === 'F') {
+        let fahrenheit = 0;
+        fahrenheit = (degree * 9 /5) + 32;
+        console.log(`${degree}°C is ${fahrenheit}°F`);
+      } else if (unit === 'C') {
+        let celcius = 0;
+        celcius = (degree -32) * 5/ 9;
+        console.log(`${degree}°C is ${celcius}°C`);
+      }
+    }
+    converTemperature(25, 'F');
+    converTemperature(86, 'C');
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function isSameProduct(product1, product2) {
+      if (product1.name === product2.name && product1.price === product2.price) {
+        return true;
+      } else return false;
+    }
+
+    const ball1 = {
+      name: 'basketball',
+      price: 2095 
+    };
+    const ball2 = {
+      name: 'volleyball',
+      price: 3000
+    }
+    const ball3 = {
+      name: 'basketball',
+      price: 2095
+    }
+    const ball4 = ball1;
+
+    console.log(isSameProduct(ball1, ball2));
+    let theSameProduct = isSameProduct(ball1, ball3);
+    console.log(theSameProduct);
+    console.log(isSameProduct(ball1, ball4));
+
+    //in this example, the output is FALSE. Because JS checks for references not the actual property and value inside the objects.
+    
+    console.log(ball1===ball3);
+  </script>
+
+
+</body>
+</html>

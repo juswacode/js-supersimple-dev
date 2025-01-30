@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+  <link rel="stylesheet" href="styles/05-cart-quantity.css">
+</head>
+<body>
+  <h3>Cart Quantity</h3>
+  <button class="button" onclick="console.log(`Cart Quantity: ${cartQuantity}`);
+  ">Show Quantity</button>
+
+  <button class="button-add" onclick="
+  cartQuantity += 1;
+  console.log(`Cart Quantity: ${cartQuantity}`);">
+  Add to Cart</button>
+
+  <button class="button-add" onclick=
+  "cartQuantity += 2;
+  console.log(`Cart Quantity: ${cartQuantity}`);">
+  +2</button>
+
+  <button  class="button-add" onclick="
+  cartQuantity += 3;
+  console.log(`Cart Quantity: ${cartQuantity}`);">
+  +3</button>
+
+  <button  class="button-reset" onclick="
+  if (cartQuantity == 0) {
+    console.log('Cart already empty.')
+  }
+  cartQuantity = cartQuantity - cartQuantity;
+  console.log(`Cart Quantity: ${cartQuantity}`);"
+  >Reset Cart</button>
+
+  <button class="button-reset" onclick="
+  if (cartQuantity > 0) {
+  cartQuantity -= 1;
+  console.log(`Cart Quantity: ${cartQuantity}`)
+  ;}
+  else{
+  console.log('Cart is already empty.');
+  console.log(`Cart Quantity: ${cartQuantity}`);
+  }
+  ">
+  Remove from Cart</button>
+
+  <script>
+    let cartQuantity = 0;
+  </script>
+</body>
+</html>

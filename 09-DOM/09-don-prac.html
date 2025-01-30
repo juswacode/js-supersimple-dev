@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>YouTube Subscribe Button</h2>
+  <button
+  onclick="
+    
+    if (document.querySelector('#subs-button').innerText == 'Subscribed') {
+      document.querySelector('#subs-button').innerText = 'Subscribe';
+    } else {
+      document.querySelector('#subs-button').innerText = 'Subscribed';
+    }
+  " id="subs-button">Subscribe</button>
+
+  <style>
+    #subs-button {
+      color: white;
+      background-color: red;
+      font-weight: bold;
+      padding: 1em;
+      border-radius: 15px;
+      cursor: pointer;
+      width: 100px;
+      border: none;
+    }
+
+  </style>
+</body>
+</html>

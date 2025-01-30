@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9c</title>
+</head>
+<body>
+  <button class="heads-button"
+    onclick=" userPick('heads')
+
+  ">heads</button>
+  <button class="tails-button"
+    onclick="userPick('tails')
+  ">tails</button>
+  <p class="user-choice"></p>
+
+  <script>
+    // const headButton = document.querySelector('.heads-button').innerHTML;
+    // const tailButton = document.querySelector('.tails-button');
+    let userChoice = document.querySelector('.user-choice');
+
+    function userPick(choice) {
+      if (choice === 'heads') {
+        userChoice.innerHTML = 'You choose: heads';
+      } else {
+        userChoice.innerHTML = 'You choose: tails'
+      }
+    }
+  </script>
+</body>
+</html>

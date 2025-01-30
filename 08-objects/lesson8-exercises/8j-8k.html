@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script>
+
+      /*
+      const randomNumber = Math.random();
+      const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+      const guess = 'heads';
+      console.log(guess === result ? 'You win!' : 'You lose!');
+      */
+     //Above was the original code. Below is I created 2 buttons which is exactly equals to heads and tails. I created a function playGame to reuse each time I click whether heads or tails. THe function uses the shortcut version of if else... known us ternary operator. 
+
+    //  let score = {
+    //     wins: 0,
+    //     losses: 0
+    //   }
+
+    /*This block of code below creates a default score Object if no score is stored in localStorage*/
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      
+      function playGame(guess) {
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+        console.log(guess === result ? 'You win!' : 'You lose!');
+        
+        if (guess === result) {
+        score.wins += 1;
+        } else score.losses += 1;
+        console.log(score);
+        localStorage.setItem('score', JSON.stringify(score));
+        
+       
+      };
+
+
+
+      
+    </script>
+
+    <button onclick="
+    const choose = 'heads';
+    playGame(choose);
+
+    ">heads</button>
+    <button onclick="
+    const choose = 'tails';
+    playGame(choose);
+    ">tails</button>
+    
+    <button onclick="
+    localStorage.removeItem('score');
+    console.log(score);
+    ">Reset Score</button>
+  </body>
+</html>

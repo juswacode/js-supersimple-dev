@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 8 Exercises</title>
+</head>
+<body>
+  <script>
+
+    //create an objecst with property and value
+    const product1 = {
+      name: 'basketball',
+      price: 2095 
+    };
+    console.log(product1);
+
+    //update the price property, plus 500
+    product1.price = product1.price + 500;
+    console.log(product1);
+
+    //using bracket notation to update the OBJECT PRODUCTS, added delivery-time property
+    product1['delivery-time'] = '3 days';
+    console.log(product1);
+
+
+    const product2 = {
+      name: 'volleyball',
+      price: 3000
+    }
+
+
+    //a function the compare 2 products prices and return the less expensive name.
+    function comparePrice(product1, product2) {
+
+
+      if (product1.price < product2.price) {
+        return product1.name;
+      } else if (product2.price < product1.price) {
+        return product2.name;
+      } else ('Products same price');
+    }
+
+    let lessExpensive = comparePrice(product1, product2);
+    console.log(lessExpensive);
+  </script>
+</body>
+</html>

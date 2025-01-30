@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6a</title>
+</head>
+<body>
+  <!-- 6a to 6c -->
+  <script>
+    const hour = 15;
+    const name = 'Joshua';
+    if (hour > 6 && hour < 12) {
+      console.log(`Good Morning ${name}!`);
+    } else if (hour > 13 && hour < 17) {
+      console.log(`Good Afternoon ${name}!`);
+    } else {
+      console.log(`Good Night ${name}!`);
+    }
+  </script>
+  
+  <!-- 6d to 6e-->
+  <script>
+  //writing a fuction discout where it take age of a 
+  //person as an argument and tell if age 6 below and 65 above to have a discount
+  //2nd argument checks whether it is holiday or not!
+  //If not holiday, NO DISCOUNT
+  function discount(age, isHoliday = true) {
+    
+    if ((age <= 6 || age > 65) && isHoliday) {
+      console.log('Discount!');
+    } else {
+      console.log('No discount!');
+    }
+  }
+  discount(70, false);
+  </script>
+
+  <!-- 6f to 6i -->
+  <!-- Heads or Tails. If you guess it, then you win! -->
+  <script>
+    function headOrTails (guess) {
+      const ranNum = Math.random();
+      let result = '';
+      
+      if (ranNum < 0.5) {
+        result = 'head';
+      } else {
+        result = 'tails';
+      }
+
+      if (guess == result) {
+        console.log('You win!');
+      } else {
+        console.log('You loose!');
+      }
+    }
+    headOrTails('head');
+  </script>
+
+  <!-- 6j -->
+  <!-- same as above, here I just use the ternary operator insted of if statement -->
+  <script>
+    function randomGuess(headOrTails) {
+      const ranNum = Math.random();
+      const result = ranNum < 0.5 ? 'heads' : 'tails';
+      let guess = result == headOrTails ? 'You win!' : 'You loose!';
+      console.log(`${guess}`);
+    }
+    randomGuess('head');
+  </script>
+
+</body>
+</html>

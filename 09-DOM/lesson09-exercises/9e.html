@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9d</title>
+</head>
+<body>
+  <input placeholder="Name" class="name" onkeydown="keyEnter()">
+  <button
+    onclick="submit()"
+  >Submit</button>
+  <p class="message"></p>
+
+  <script>
+    
+    function submit() {
+
+      const input = document.querySelector('.name');
+      let message = document.querySelector('.message');
+      const lowerCaseName = input.value;
+      const upperCaseName = capitalized(lowerCaseName);
+      message.textContent = `Your name is: ${upperCaseName}`;
+      
+    }
+
+    function keyEnter() {
+      if (event.key === 'Enter') {
+        submit();
+      }
+    }
+
+    function capitalized(name) {
+      return name.charAt(0).toUpperCase() + name.slice(1);
+    }
+    
+  </script>
+
+</body>
+</html>

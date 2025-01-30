@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Projects</title>
+</head>
+<body>
+  <p><strong>YouTube Subscribe Button</strong></p>
+  <button id="youtubeButton"
+    onclick=" 
+      subscribed();
+    ">Subscribe
+  </button>
+
+  <p><strong>Rock Paper Scisors Game<</strong></p>
+
+  <a href="09-rock-paper-scissors.html" target="_blank">Click here to play</a>
+
+  <strong><p id="amazon">Amazon Shipping Calculator</p></strong>
+  
+  <p>Orders under $40 = +$10 shipping fee.</p>
+  
+  <p>Orders over $40 = FREE shipping fee.</p>
+
+  <!-- use input element to get users desired value. then use onkeydown""" event.key (this is an evenListener) to get the value of the keys that is press. Ex: if you click enter, it will be reccorded, then you can customize what to do next. LOL! I have created it as a function to reuse in the future hehe.
+  -->
+  <input placeholder="Cost of order" id="orders-cost-input" 
+    onkeydown="keydownEnter()">
+  
+  <button onclick="
+    calculateTotal();
+  ">Calculate</button>
+
+  <p id="total"></p>
+
+  <script>
+
+    function keydownEnter() {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
+    function calculateTotal() {
+      const input = document.getElementById('orders-cost-input');
+      const total = document.getElementById('total');
+
+      /*To get the value from the input, you need to use the 
+      .value to get it! | .value: A property used to access the value of an input field. */
+      let cost = parseFloat(input.value);
+
+      console.log(`Initial cost: ${cost}`);
+
+      // if (cost < 40) {
+      //   cost =+ 10;
+      // }
+      // return cost;
+      if (cost < 40) {
+        cost = cost + 10;
+      }
+
+      console.log(`Total: ${cost}`)
+      total.textContent = `Total: $${cost}`;
+      
+    }
+
+    function subscribed () {
+      let youtubeButton = document.getElementById('youtubeButton');
+    
+      if (youtubeButton.textContent === 'Subscribe') {
+        youtubeButton.textContent = 'Subscribed';
+      } else {
+        youtubeButton.textContent = 'Subscribe';
+      }
+    }
+  </script>
+</body>
+</html>

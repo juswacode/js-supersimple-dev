@@ -1,0 +1,25 @@
+
+body  {
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+.emoji-button {
+  height: 50px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 60px;
+
+}
+
+.move-button {
+  background-color: transparent;
+  border: 2px solid white;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+}
+
+.results {
+  font-size: 50px;
+  background-color: green;
+}

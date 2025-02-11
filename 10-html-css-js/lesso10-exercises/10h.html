@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM Projects</title>
+  <title>10h</title>
 
   <style>
 
@@ -48,6 +48,11 @@
       border: none;
     }
 
+    .cost-negative {
+      color: red;
+    }
+    
+
   </style>
 </head>
 <body>
@@ -70,18 +75,19 @@
 
   <!-- use input element to get users desired value. then use onkeydown""" event.key (this is an evenListener) to get the value of the keys that is press. Ex: if you click enter, it will be reccorded, then you can customize what to do next. LOL! I have created it as a function to reuse in the future hehe.
   -->
-  <input placeholder="Cost of order" 
-    id="orders-cost-input"
-    class="cost-input" 
-    onkeydown="keydownEnter()"
-  >
+  <input placeholder="Cost of order" id="orders-cost-input" class="cost-input" 
+    onkeydown="keydownEnter()">
+  
   <button class="calculate-button"
     onclick="
       calculateTotal();
-    ">Calculate
-  </button>
+  ">Calculate</button>
 
+  <!-- To display total cost -->
   <p id="total"></p>
+
+    <!-- Create an element to display the error message. -->
+  <p class="cost-negative"></p>
 
   <script>
 
@@ -94,6 +100,7 @@
     function calculateTotal() {
       const input = document.getElementById('orders-cost-input');
       const total = document.getElementById('total');
+      const errorMessage = document.querySelector('.cost-negative');
 
       /*To get the value from the input, you need to use the 
       .value to get it! | .value: A property used to access the value of an input field. */
@@ -101,18 +108,37 @@
 
       console.log(`Initial cost: ${cost}`);
 
+
+      // Clear previous messages in the pages. Like the TOTALCost of the ERRORMessage which is in red text. 
+      total.textContent = '';
+      errorMessage.textContent = '';
+
+      //Display error message if amount is less than $0
+      if (cost < 0) {
+        document.querySelector('.cost-negative').innerHTML = `Error: cost cannot be less than $0.`;
+       
+        // If we display an error, we can use return to
+        // end this function immediately. This is called
+        // an "early return" and it makes the code cleaner
+        // because it reduces nesting / indents.
+        return;
+      }
+      
       // if (cost < 40) {
-      //   cost =+ 10;
+      //   cost += 10;
       // }
       // return cost;
       if (cost < 40) {
         cost = cost + 10;
       }
 
+      //Display the total cost in the page. 
       console.log(`Total: ${cost}`)
       total.textContent = `Total: $${cost}`;
       
     }
+      
+      
 
     function subscribed () {
       const youtubeButton = document.querySelector('.youtubeButton');

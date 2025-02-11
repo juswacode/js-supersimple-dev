@@ -1,0 +1,12 @@
+.js-button {
+  background-color: lightgrey;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.is-toggled {
+  background-color: black;
+  color: white;
+}

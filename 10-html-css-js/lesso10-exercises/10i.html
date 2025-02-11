@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <style>
+      body {
+        background-color: black;
+      }
+      .calculate-button {
+        background-color: rgb(51, 51, 51);;
+        color: white;
+        height: 60px;
+        width: 60px;
+        margin-right: 10px;
+        border-radius: 30px;
+        font-size: 26px;
+        cursor: pointer;
+        border: none;
+      }
+      .clear-button {
+        font-size: 17px;
+      }
+      .orange-button {
+        background-color: orange;
+      }
+      .display {
+        color: white;
+        font-size: 45px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        min-height: 60px; /* Ensures the display has a visible space */
+        line-height: 60px; /* Vertically centers the text */
+      }
+
+    </style>
+  </head>
+  <body>
+    <p class="display"></p>
+    <p>
+      <button onclick="
+        updateCalculation('1');
+      " class="calculate-button">1</button>
+
+      <button onclick="
+        updateCalculation('2');
+      " class="calculate-button">2</button>
+
+      <button onclick="
+        updateCalculation('3');
+      " class="calculate-button">3</button>
+
+      <button onclick="
+        updateCalculation(' + ');
+      " class="calculate-button orange-button">+</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('4');
+      " class="calculate-button">4</button>
+
+      <button onclick="
+        updateCalculation('5');
+      " class="calculate-button">5</button>
+
+      <button onclick="
+        updateCalculation('6');
+      " class="calculate-button">6</button>
+
+      <button onclick="
+        updateCalculation(' - ');
+      " class="calculate-button orange-button">-</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('7')
+      " class="calculate-button">7</button>
+
+      <button onclick="
+        updateCalculation('8');
+      " class="calculate-button">8</button>
+
+      <button onclick="
+        updateCalculation('9')
+      " class="calculate-button">9</button>
+
+      <button onclick="
+        updateCalculation(' * ');
+      " class="calculate-button orange-button">*</button>
+    </p>
+
+    <p>
+      <button onclick="
+        updateCalculation('0');
+      " class="calculate-button">0</button>
+
+      <button onclick="
+        updateCalculation('.');
+      " class="calculate-button">.</button>
+
+      <button onclick="
+        // Note: eval() takes a string and runs it as code.
+        // Avoid using eval() in real world projects since
+        // it can potentially be given harmful code to run.
+        // Only use eval() for learning purposes.
+        calculation = eval(calculation);
+        console.log(calculation);
+
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+
+        /*Displays total in the webpage*/
+        displayCalculation();
+      " class="calculate-button">=</button>
+
+      <button onclick="
+        updateCalculation(' / ');
+      " class="calculate-button orange-button">/</button>
+    </p>
+
+    <p>
+      <button onclick="
+        calculation = '';
+        console.log(calculation);
+        // Remember to save the calculation here.
+        localStorage.setItem('calculation', calculation);
+
+        /*Simply display nothing whenever clear is click*/
+        displayCalculation();
+      " class="calculate-button clear-button">Clear</button>
+    </p>
+
+  
+
+    <script>
+      let calculation = localStorage.getItem('calculation') || '';
+
+      displayCalculation(0);
+
+      function updateCalculation(value) {
+        calculation += value;
+        console.log(calculation);
+
+        /*This is were we call it and display the keys entered in webpage*/
+        displayCalculation();
+
+        localStorage.setItem('calculation', calculation);
+      }
+
+      
+      /*Function to display in webpage instead of console.*/
+      function displayCalculation(number) {
+        const num = document.querySelector('.display');
+        num.textContent = calculation;
+      }
+
+    </script>
+  </body>
+</html>

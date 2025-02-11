@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11L</title>
+</head>
+<body>
+  <script>
+    // This is the start of a function called findMaxAndMin. It's like a recipe that helps us find the biggest and smallest numbers in a list.
+    function minMax(nums) {
+      
+      // First, we need to check if the list is empty. If it is, we can't find the biggest or smallest number, so we return a special message that says "null" for both.
+      
+      // {}: Create a new object
+      // max:null: Create a property called max and set its value to null
+      // min:null: Create a property called min and set its value to null
+      // return {... }: Return the new object as the answer
+      if (nums.length === 0) {
+        return {max:null, min:null}
+      };
+
+      // Now we know the list is not empty, so we can start by assuming the first number is both the biggest and smallest. We'll use these variables to keep track of the biggest and smallest numbers we find.
+      let numObj = {min: nums[0],
+        max: nums[0]
+        };
+
+      
+      // Next, we're going to look at each number in the list, one by one, starting from the second number (because we already looked at the first one).
+      for (let i =0; i < nums.length; i++) {
+        
+        // If the current number is bigger than the biggest number we've seen so far, we update our "max" variable to be this new number.
+        const num = nums[i];
+        if (num > numObj.max) {
+          numObj.max = num;
+        }
+
+        // If the current number is smaller than the smallest number we've seen so far, we update our "min" variable to be this new number.
+        if (num < numObj.min) {
+          numObj.min = num;
+        }
+      }
+      
+      // Finally, we've looked at all the numbers in the list, so we can return the biggest and smallest numbers we found.
+      return numObj;
+        
+      
+    }
+    console.log(minMax([-2, 3, -5, 7, 10]));
+    console.log(minMax([]));
+    console.log(minMax([3]));
+  </script>
+</body>
+</html>

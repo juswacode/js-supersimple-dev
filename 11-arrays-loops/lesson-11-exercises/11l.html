@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11L</title>
+</head>
+<body>
+  <script>
+    function minMax(nums) {
+      //placeholder for maxNumber and minNumbers, did this because I am thinking how to get the maxNum and minNum by using loop.
+      let maxNum = 0;
+      let minNum = 0;
+      let numObj = {min: 0,
+        max: 0
+      };
+
+      for (let i =0; i < nums.length; i++) {
+        const num = nums[i];
+        while (num > maxNum) {
+          maxNum = num;
+        }
+        while (num < minNum) {
+          minNum = num;
+        }
+      }console.log(maxNum);
+      console.log(minNum);
+      numObj.min = minNum;
+      numObj.max = maxNum;
+      console.log(numObj);
+        
+      
+    }
+    minMax([-2, 3, -5, 7, 10]);
+  </script>
+</body>
+</html>

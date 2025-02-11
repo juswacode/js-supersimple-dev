@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10g</title>
+  <link rel="stylesheet" href="10g.css">
+  <script defer src="10g.js"></script>
+</head>
+<body>
+  
+  <!-- Passing this to isToggled: The onclick attribute now passes this (the clicked button) to the isToggled function. This allows the function to know which button was clicked.
+
+  Toggling the class: The isToggled function now takes the clicked button as an argument and toggles the is-toggled class on that specific button. -->
+  <button class="js-button button1"onclick="isToggled('.button1')">Gaming</button>
+  <button class="js-button button2" onclick="isToggled('.button2')">Music</button>
+  <button class="js-button button3" onclick="isToggled('.button3')">Tech</button>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11i</title>
+</head>
+<body>
+  <script>
+
+    //accepts an array of number, outputs that array of number plus choosen number. 
+    function addNum(array, num) {
+      let plus1 = [];
+      for (let i = 0; i < array.length; i++) {
+        plus1.push(array[i] + num);
+      }
+      return plus1
+    }
+    console.log(addNum([1,2,3], 2));
+  </script>
+</body>
+</html>

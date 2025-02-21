@@ -7,9 +7,32 @@
 </head>
 <body>
   <script>
+    // Define a function called countWords that takes an array of words as an argument
     function countWords(words) {
-      
+      // Initialize an empty object called result to store the word counts
+      let result = {};
+
+      // Loop through each word in the array
+      for (let i = 0; i < words.length; i++) {
+        // Get the current word from the array
+        const word = words[i];
+
+        // Check if the word is already in the result object
+        if (!result[word]) {
+          // If the word is not in the result object, add it with a count of 1
+          result[word] = 1;
+        } else {
+          // If the word is already in the result object, increment its count by 1
+          result[word]++;
+        }
+      }
+
+      // Return the result object with the word counts
+      return result;
     }
+
+  // Test the function with an array of words and log the result to the console
+  console.log(countWords(['apple', 'grape', 'apple', 'apple', 'orange']));
   </script>
 </body>
 </html>

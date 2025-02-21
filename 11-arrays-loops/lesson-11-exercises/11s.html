@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11s</title>
+</head>
+<body>
+  <script>
+    // Define a function to remove 'egg's from the array until two 'egg's are found
+    function removeEgg(foods) {
+      let eggCount = 0;
+      for (let i=0; i< foods.length; ) {
+
+        // Check if the current element is an 'egg'
+        if (foods[i] == 'egg') {
+          // If it's an 'egg', increment the egg count and remove it from the array
+          eggCount += 1;
+          foods.splice(i, 1);
+
+          // If two 'egg's have been found, return the updated array
+          if (eggCount === 2) {
+            return foods;
+          }
+          
+        }
+        // If it's not an 'egg', increment the index to move on to the next element
+        else {
+          i++
+        }
+
+      }
+      // If the loop completes without finding two 'egg's, return the updated array
+      return foods;
+    }
+    console.log(removeEgg(['ham', 'apple', 'egg', 'egg', 'egg']));
+  </script>
+</body>
+</html>

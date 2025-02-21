@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11p</title>
+</head>
+<body>
+  <script>
+    // Create an array of strings
+    const wordArray = ['hello', 'world', 'search', 'good', 'search']
+
+    // Initialize a variable to store the index of'search'
+    let index = -1;
+
+    // Loop over the array
+    for (let i = 0; i < wordArray.length; i++) {
+
+      // Check if the current string is'search'
+      if (wordArray[i] == 'search') {
+
+        // If it is, store the index and break the loop
+        index = i;
+        //We use break so the whenever we find what we are looking for, the program will immediately stop. It's efficient and avoid unnecessary iterations. 
+        break;
+      }
+    }
+    // Console.log the index of'search' in the array
+    console.log(index);
+  </script>
+</body>
+</html>

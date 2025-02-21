@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11u</title>
+</head>
+<body>
+  <script>
+    // Define a function to remove 'egg's from the array until two 'egg's are found
+    function removeEgg(foods) {
+      let eggCount = 0;
+
+      // Create a copy of the original array to avoid modifying it directly
+      let foodCopy = foods.slice();
+      for (let i=0; i< foodCopy.length; ) {
+
+        // Check if the current element is an 'egg' by reversing the array and checking the element at the current index
+        if (foodCopy.reverse()[i] == 'egg') {
+          // If it's an 'egg', increment the egg count and remove it from the array
+          eggCount += 1;
+          foodCopy.splice(i, 1);
+
+          // If two 'egg's have been found, return the updated array
+          if (eggCount === 2) {
+            return foodCopy;
+          }
+          
+        }
+        // If it's not an 'egg', increment the index to move on to the next element
+        else {
+          i++
+        }
+
+      }
+      // If the loop completes without finding two 'egg's, return the updated array
+      return foodCopy;
+    }
+    const foods = ['egg', 'apple', 'egg', 'egg', 'ham'];
+    console.log(removeEgg(foods));
+
+    // The original array remains unchanged
+    console.log(foods);
+  </script>
+</body>
+</html>

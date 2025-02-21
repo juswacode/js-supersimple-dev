@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11q</title>
+</head>
+<body>
+  <script>
+      // Define a function called findIndex that takes two parameters: array and word
+      function findIndex(array, word) {
+        // Initialize a variable index to -1, which will be used to store the index of the word in the array
+        let index = -1;
+
+        // Loop through each element in the array
+        for (let i = 0; i < array.length; i++) {
+          // Check if the current element in the array is equal to the word we're searching for
+          if (array[i] == word) {
+            // If the word is found, update the index variable with the current index and exit the loop
+            index = i;
+            break;
+          }
+        }
+      // Log the index of the word in the array to the console
+      console.log(index);
+      }
+
+      // Call the findIndex function with an example array and word
+      findIndex(['green','red', 'blue','red'],'red');
+      findIndex(['green', 'red', 'blue', 'red'], 'yellow');
+  </script>
+  <!--  I want to point out that this function will only return the index of the first occurrence of the word in the array. If the word appears multiple times in the array, this function will only return the index of the first one. If you want to find all occurrences of the word, you would need to modify the function to store the indices in an array or use a different approach. -->
+</body>
+</html>

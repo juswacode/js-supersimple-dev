@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11v</title>
+</head>
+<body>
+  <script>
+    //a loop that counts from 1 to 20
+    for (let i =1; i <= 20; i++) {
+
+      //checks whether the number divisible by 3 and 5 is equals to 0, if it is then print 'FizzBuzz'
+      if(i % 3 == 0 && i % 5 == 0) {
+        console.log('FizzBuzz')
+      }
+      
+      //checks if number divisible by 5 is equals to 0 then prints 'Buzz'
+      else if (i % 5 == 0) {
+        console.log('Buzz')
+      }
+      
+      //checks if number divisible by 3 is equals to 0 then prints 'Fizz'
+      else if (i % 3 == 0) {
+        console.log('Fizz')
+      }
+
+      //prints all the numbers of the loop
+      else {
+        console.log(i)
+      }
+    
+    }
+    
+  </script>
+</body>
+</html>

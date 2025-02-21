@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11r</title>
+</head>
+<body>
+  <script>
+    // Loop through the array, but don't increment the index automatically
+    function removeEgg(foods) {
+      for (let i=0; i< foods.length; ) {
+
+        // Check if the current element is an 'egg'
+        if (foods[i] == 'egg') {
+          // If it's an 'egg', remove it from the array
+          foods.splice(i, 1)
+
+        // If it's not an 'egg', increment the index to move on to the next element
+        }else {
+          i++
+        }
+
+      }
+      // Print the updated array
+      console.log(foods)
+    }
+    removeEgg(['egg', 'egg', 'ham', 'apple', 'egg', 'egg']);
+  </script>
+</body>
+</html>

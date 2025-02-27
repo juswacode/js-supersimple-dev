@@ -39,23 +39,42 @@
       //   console.log(arr)
       // }
 
+      // function unique(array) {
+      //   const result = [];
+
+      //   for (let i = 0; i < array.length; i++) {
+      //     const word = array[i];
+
+      //     // Using the findIndex() function from above, we
+      //     // can check if the string is already in the
+      //     // result array. If it's not in the result array
+      //     // (index is -1), then add it to the result array.
+      //     if (findIndex(result, word) === -1) {
+      //       result.push(word);
+      //     }
+      //   }
+
+      //   return result;
+      // }
+
+
       function unique(array) {
-        const result = [];
-
-        for (let i = 0; i < array.length; i++) {
-          const word = array[i];
-
-          // Using the findIndex() function from above, we
-          // can check if the string is already in the
-          // result array. If it's not in the result array
-          // (index is -1), then add it to the result array.
-          if (findIndex(result, word) === -1) {
-            result.push(word);
+      let result = [];
+      for (let i = 0; i < array.length; i++) {
+        let found = false;
+        for (let j = 0; j < result.length; j++) {
+          if (array[i] === result[j]) {
+            found = true;
+            break;
           }
         }
-
-        return result;
+        if (!found) {
+          result.push(array[i]);
+        }
       }
+      return result;
+    }
+
 
       // console.log(unique(['green', 'red', 'blue', 'red']));
 
@@ -63,7 +82,7 @@
       // findIndex(['green','red', 'blue','red'],'red');
       // findIndex(['green', 'red', 'blue', 'red'], 'yellow');
 
-      console.log(unique(['red', 'red']))
+      console.log(unique(['red', 'red', 'red', 'white', 'yellow']))
   </script>
   <!--  I want to point out that this function will only return the index of the first occurrence of the word in the array. If the word appears multiple times in the array, this function will only return the index of the first one. If you want to find all occurrences of the word, you would need to modify the function to store the indices in an array or use a different approach. -->
 </body>

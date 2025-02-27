@@ -1,7 +1,7 @@
-const todoList = [{
-  name: 'Read scriptures',
-  dueDate: '2022-10-2'
-}];
+// When loading the page, load from localStorage.
+const todoList = JSON.parse(localStorage.getItem('todoList'));
+
+
 
 //To show what is inside the list.
 renderTodoList();
@@ -20,7 +20,10 @@ function renderTodoList () {
                     <button onclick="
                       todoList.splice(${i}, 1);
                       renderTodoList();
-                    " class="delete-todo-button">Delete</button>
+                      
+                      // Whenever we update the todo list, save in localStorage.
+                      saveTodoList();" 
+                      class="delete-todo-button">Delete</button>
                     `;
 
       todoListHTML += html;
@@ -43,11 +46,23 @@ function addToDo() {
   const dueDate = dateInputElement.value;
 
   //add the value or data that is entered into Object Array. 
-  todoList.push({name, dueDate
+  todoList.push({
+    //name: name,
+    //dueDate: dueDate,
+    name, 
+    dueDate
   });
 
   //reset the text inside the INPUT table
   inputElement.value = '';
   console.log(todoList);
   renderTodoList();
+  
+  // Whenever we update the todo list, save in localStorage.
+  saveTodoList();
+}
+
+// Function to save the todo list in local storage
+function saveTodoList() {
+  localStorage.setItem('todoList', JSON.stringify(todoList));
 }

@@ -5,23 +5,28 @@ let playerComputerMove = document.getElementById('player-computer-move');
 
 
 // using objects to update the score
-let score = JSON.parse(localStorage.getItem('score')) //this will convert back the string into onject and be able to access the property & value.
+let score = 
+  // will render this score if something is stored in localStorage.
+  // this will convert back the string into onject and be able to access the property & value. 
+  /*Manual way to do it! */
+  // JSON.parse(localStorage.getItem('score')) 
 
-
-    // {
-    //   wins: 0,
-    //   losses: 0,
-    //   ties:
-    // }
+  /*Renders the score stored in localStoage, if null then render the score object*/
+  getLocalStorage('score') || {
+    wins: 0,
+    losses: 0,
+    ties: 0
+  };
   
+  // then if score is null, will render this one. 
   // resets the score when null
-  if (score === null) {
-    score = {
-      wins: 0,
-      losses: 0,
-      ties: 0
-    }
-  }
+  // if (score === null) {
+  //   score = {
+  //     wins: 0,
+  //     losses: 0,
+  //     ties: 0
+  //   }
+  // }
 
 
 /*Shows immediately the score when you open the game. */  
@@ -93,9 +98,26 @@ function playGame(compMove = pickComputerMove(), playerMove) {
     score.ties += 1;
   }
 
+  // this will add a new class name for gameResult element, in which we can use is CSS to edit the background.
+  // green = win, red = loose, yellow = tie.
+  gameResult.classList.remove('win', 'loose', 'tie');
+  switch (result) {
+  case 'Win':
+    gameResult.classList.add('win');
+    break;
+  case 'Loose':
+    gameResult.classList.add('loose');
+    break;
+  case 'Tie':
+    gameResult.classList.add('tie');
+    break;
+}
+
+
   //This gonna convert the variable score into string, since localStorage only accept strings as value
-  const scoreToString = JSON.stringify(score);
-  localStorage.setItem('score', scoreToString);
+  // const scoreToString = JSON.stringify(score);
+  // localStorage.setItem('score', scoreToString);
+  setLocalStorage('score', score);
 
   // alert(`You pick ${playerMove}. Computer pick ${compMove}. OUTCOME: ${result}! \ \n Wins: ${score.wins}   Losses: ${score.losses}   Ties: ${score.ties}`);  //the \ \n is a newline.. remember, please dont be confuse.
   console.log(score);
@@ -128,3 +150,11 @@ function resetScore() {
   gameResult.textContent = '';
   */
 } 
+
+function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data))
+}
+
+function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key))
+}

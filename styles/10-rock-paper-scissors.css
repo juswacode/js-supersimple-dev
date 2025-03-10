@@ -21,5 +21,20 @@ body  {
 
 .results {
   font-size: 50px;
+  }
+
+
+/* will run this next 3 block of code for the background color of results */
+/* green = win, red = loose, yellow = tie */
+.win {
   background-color: green;
 }
+
+.loose {
+  background-color: red;
+}
+
+.tie {
+  background-color: yellow;
+  color: black;
+  }

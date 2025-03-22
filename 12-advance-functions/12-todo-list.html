@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List 2st Version</title>
+  <link rel="stylesheet" href="12-todo-list.css">
+  <script defer src="../scripts/12-todo-list.js"></script>
+</head>
+
+<body>
+  <p>Todo List</p>
+  <div class="todo-input-grid">
+    <input placeholder="To do task" class="js-name-input name-input"
+      // if enter keyboard is press
+      onkeydown="if (event.key === 'Enter') {
+        addToDo();
+      }"
+    >
+    <input type="date" class="js-date-input due-date-input">
+    <button 
+      onclick="addToDo()" class="add-todo-button">Add
+    </button>
+  </div>
+
+  <div class="js-todo-list todo-grid">
+    Ex: This is a block element!
+  </div>
+</body>
+</html>

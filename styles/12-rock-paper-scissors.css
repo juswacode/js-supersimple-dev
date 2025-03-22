@@ -1,0 +1,52 @@
+
+body  {
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+.emoji-button {
+  height: 50px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 60px;
+
+}
+
+.move-button {
+  background-color: transparent;
+  border: 2px solid white;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+}
+
+.results {
+  font-size: 50px;
+  }
+
+
+/* will run this next 3 block of code for the background color of results */
+/* green = win, red = loose, yellow = tie */
+.win {
+  background-color: green;
+}
+
+.loose {
+  background-color: red;
+}
+
+.tie {
+  background-color: yellow;
+  color: black;
+  }
+
+
+.auto-play-button,
+.reset-score-button,
+.show-score-button {
+  background-color: white;
+  border: none;
+  font-size: 15px;
+  padding: 8px 15px;
+  cursor: pointer;
+
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Joshua Gil Reyes">
+  <title>12 || Rock Paper Scissors</title>
+  <link rel="stylesheet" href="../styles/12-rock-paper-scissors.css">
+
+</head>
+<body>
+  <h3>Rock Paper Scissors Game</h3>
+  <button onclick="
+    playGame(undefined, 'rock');"
+    class="move-button"
+    ><img src="../images/rock-emoji.png" alt="rock-emoji" class="emoji-button">
+  </button>
+
+  <button onclick="
+    playGame(undefined, 'paper');"
+    class="move-button"
+    ><img src="../images/paper-emoji.png" alt="paper-emoji" class="emoji-button">
+  </button>
+
+  <button onclick="
+    playGame(undefined, 'scissors'); // The first parameter defaults to pickComputerMove()" 
+    class="move-button"
+    ><img src="../images/scissors-emoji.png" alt="scissors-emoji" class="emoji-button">
+  </button>
+
+
+
+  <p id="result" class="results"></p>
+
+  <p id="player-computer-move"></p>
+
+  <p id="score-tab"></p>
+
+  <button class="show-score-button" onclick="
+    scoringTab();
+    gameResult.textContent = '';
+    playerComputerMove.textContent = '';
+  ">Show Scores</button>
+
+  <button class="reset-score-button" onclick="
+    resetScore();
+  ">Reset Score</button>
+
+  <button class="auto-play-button" onclick="
+    autoPlay();
+  ">Auto Play</button>
+
+  <script src="../scripts/12-rock-paper-scissors.js"></script>
+</body>
+</html>

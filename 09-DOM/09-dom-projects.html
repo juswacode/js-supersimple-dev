@@ -26,9 +26,9 @@
   <!-- use input element to get users desired value. then use onkeydown""" event.key (this is an evenListener) to get the value of the keys that is press. Ex: if you click enter, it will be reccorded, then you can customize what to do next. LOL! I have created it as a function to reuse in the future hehe.
   -->
   <input placeholder="Cost of order" id="orders-cost-input" 
-    onkeydown="keydownEnter()">
+    onkeydown="keydownEnter(event)">
   
-  <button onclick="
+    <button onclick="
     calculateTotal();
   ">Calculate</button>
 
@@ -36,7 +36,8 @@
 
   <script>
 
-    function keydownEnter() {
+    // explicitly added param event so whenever this function is called, it expects to take the EVENT OBJECT.
+    function keydownEnter(event) {
       if (event.key === 'Enter') {
         calculateTotal();
       }
@@ -62,6 +63,8 @@
 
       console.log(`Total: ${cost}`)
       total.textContent = `Total: $${cost}`;
+
+      // clears input box whenever a value is entered. Automatic del
       input.value = '';
     }
 
